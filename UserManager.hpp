@@ -10,6 +10,7 @@ private:
     std::string school;
     std::string password;
 public:
+    User(){}
     User(std::string n_,std::string s_,std::string p_):
         nick_name(n_),
         school(s_),
@@ -17,6 +18,16 @@ public:
     {}
     bool IsPasswdOk(const std::string &p){
         return p == password ? true:false;
+    }
+
+    std::string getName()
+    {
+        return nick_name;
+    }
+
+    std::string getSchool()
+    {
+        return school;
     }
     ~User(){}
 };
@@ -44,14 +55,14 @@ public:
 
     unsigned int Check(unsigned int id,std::string passwd){
         Lock();
-        std::cout<<"Check id:"<<id<<std::endl;
+        // std::cout<<"Check id:"<<id<<std::endl;
         auto it = users.find(id);
         if(it != users.end()){
-            std::cout<<"passwd1:"<<passwd<<std::endl;
+            // std::cout<<"passwd1:"<<passwd<<std::endl;
             User &u = it->second;
             if(u.IsPasswdOk(passwd))
             {
-                std::cout<<"passwd2:"<<passwd<<std::endl;
+                // std::cout<<"passwd2:"<<passwd<<std::endl;
                 UnLock();
                 return id;
             }
@@ -71,7 +82,7 @@ public:
             // }
             
             UnLock();
-            std::cout<<"Insert success id assign_id:" << id<<"--"<<assign_id<<std::endl;
+            // std::cout<<"Insert success id assign_id:" << id<<"--"<<assign_id<<std::endl;
 
             return id;
         }
@@ -82,9 +93,10 @@ public:
     void AddOnlineuser(unsigned int id,struct sockaddr_in &peer)    //上线
     {
         Lock();
-        auto it = users.find(id);
-        if(it == users.end()){
+        auto it = onlineusers.find(id);
+        if(it == onlineusers.end()){
             onlineusers.insert({id,peer});
+            std::cout<<"add online user success:"<<id<<std::endl;
         }
         UnLock();
     }
@@ -98,5 +110,19 @@ public:
     }
     ~UserManager(){
         pthread_mutex_destroy(&lock);
+    }
+
+
+    void GetInfo(const unsigned int id,std::string &name,std::string &school)
+    {
+        Lock();
+        User u;
+        auto us = users.find(id);
+        if(us != users.end())
+        {
+            name = us->second.getName();
+            school = us->second.getSchool();
+            std::cout<<"Find user"<<std::endl;
+        }
     }
 };

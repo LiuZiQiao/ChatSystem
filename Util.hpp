@@ -48,8 +48,14 @@ public:
         }      
     }
 
-    static void SendMessage(int sock,std::string &message,struct sockaddr_in &peer)
+    static void SendMessage(int sock,const std::string &message,struct sockaddr_in &peer)
     {
+        LOG("Sending to ...",NORMAL);
         ssize_t s = sendto(sock,message.c_str(),message.size(),0,(struct sockaddr*)&peer,sizeof(peer));
+        if (s <= 0) {
+            LOG("sendto error",WARNING);
+        }
+        std::cout<<"send over"<<std::endl;
+        
     }
 };

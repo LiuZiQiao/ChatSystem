@@ -9,7 +9,7 @@ all:$(server) $(client)
 $(server):ChatServer.cc
 	g++ -o $@ $^ $(INCLUDE) $(LIB_PATH) $(LDFLAGA)
 $(client):ChatClient.cc
-	g++ -o $@ $^ $(INCLUDE) $(LIB_PATH) $(LDFLAGA)
+	g++ -o $@ $^ $(INCLUDE) -lncurses $(LIB_PATH)  $(LDFLAGA) 
 .PHONY:clean
 clean:
 	rm -f $(server) $(client)

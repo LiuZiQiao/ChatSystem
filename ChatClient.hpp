@@ -3,9 +3,20 @@
 #include"json/json.h"
 #include"Util.hpp"
 #include"Message.hpp"
+#include"Window.hpp"
+#include<pthread.h>
 
 #define TCP_PORT 8080
 #define UDP_PORT 8888
+
+class ChatClient;
+
+struct Pairparam
+{
+    Window *wp;
+    ChatClient *cp; 
+};
+
 
 class ChatClient
 {
@@ -13,12 +24,12 @@ private:
     std::string ip;
     int tcp_sock;
     int udp_sock;
-
+    struct sockaddr_in server;
+    std::string passwd;
+public:
     unsigned int id;
     std::string nick_name;
     std::string school;
-    std::string passwd;
-    struct sockaddr_in server;
 public:
     ChatClient(std::string ip_):ip(ip_)
     {
@@ -43,14 +54,14 @@ public:
 
 	bool RegisterEnter(std::string &nick_name,std::string &school,std::string &password)
 	{
-		std::cout<<"Please Input Nick Name:"<<std::endl;
+		std::cout<<"Please Input Nick Name:";
 		std::cin>> nick_name;
-		std::cout<<"Please Input School:"<<std::endl;
+		std::cout<<"Please Input School:";
 		std::cin>>school;
-		std::cout<<"Please Input password:"<<std::endl;
+		std::cout<<"Please Input password:";
 		std::cin>>password;
 		std::string again;
-		std::cout<<"Please Input password again:"<<std::endl;
+		std::cout<<"Please Input password again:";
 		std::cin>>again;
 		if(again == password)
 		{
@@ -94,9 +105,9 @@ public:
 
     bool LoginEnter(unsigned int &id,std::string &password)
     {
-        std::cout<<"Login ID:"<<std::endl;
+        std::cout<<"Login ID:";
 		std::cin>>id;
-		std::cout<<"Password:"<<std::endl;
+		std::cout<<"Password:";
         std::cin>>passwd;
         return true;
     }
@@ -117,54 +128,123 @@ public:
             rq.content_length = "Content_length:"+Util::IntToString((rq.text).size());
             rq.content_length += "\n";
             SocketApi::SendRequest(tcp_sock,rq);
-            unsigned int resutl =  0;
-            recv(tcp_sock,&resutl,sizeof(resutl),0);
-             
+           
+            // std::string resutl;
+            unsigned int result;
+            recv(tcp_sock,&result,sizeof(result),0);      //recv the login result,and result include the user info
+
+            // Json::Value rs;
+            // Util::UnSerializ(resutl,rs);
+            // nick_name = rs["name"].asString();
+            // school = rs["school"].asString();
+
             bool res = false;
-            if(resutl >= 10000){
+            if(result >= 10000){
                 std::cout<<"Login Success!"<<id<<std::endl;
                 res = true;
             }else{
-                std::cout<<"Login Faild! Code is"<<resutl<<std::endl; 
+                std::cout<<"Login Faild! Code is"<<result<<std::endl; 
             }
             close(tcp_sock);
             return res;
         }
     }
 
-    void Chat()
+
+    static void *Welcome(void *arg)
     {
-        std::string name;
-        std::string school;
-        std::cout<<"Input you name:";
-        std::cin>>name;
-        std::cout<<"Input shool :";
-        std::cin>>school;
-        Message msg;
-        while(1){
-            std::string text;
-            std::cout<<"Enter";
-            std::cin>>text;
-            Message msg(name,school,text,id);
+        pthread_detach(pthread_self());
+        Window *wp = (Window*)arg;
+        wp->Welcomde();
+    }
+
+    void SendMsg(std::string &sendString)
+    {
+        Util::SendMessage(udp_sock,sendString,server);
+    }
+    static void *Input(void *arg)
+    {
+        pthread_detach(pthread_self());
+        struct Pairparam *pptr = (struct Pairparam*)arg;
+        Window *wp = pptr->wp;
+        ChatClient *cc = pptr->cp;
+
+        wp->DrawInput();
+        std::string text;
+        for(;;)
+        {
+            wp->GetStringFromInput(text);
+            Message msg(cc->nick_name,cc->school,text,cc->id);
             std::string sendString;
             msg.ToSendString(sendString);
-            
-            std::cout<<"debug ToSendString:"<<sendString<<std::endl;
-
-            Util::SendMessage(udp_sock,sendString,server);
-            
-            std::string recvString;
-            struct sockaddr_in peer;
-            Util::RecvMessage(udp_sock,recvString,peer);
-            std::cout<<"cliend send debug:"<<recvString<<std::endl;
-            msg.ToRecvValue(recvString);
-            std::cout<<"name"<<msg.Nick_Name()<<std::endl;
-            std::cout<<"school"<<msg.School()<<std::endl;
-            std::cout<<"Text"<<msg.Text()<<std::endl;
+            cc->SendMsg(sendString);
         }
         
     }
-    ~ChatClient(){
-        
+
+    void RecvMsg(std::string &recvString)
+    {
+        Util::RecvMessage(udp_sock,recvString,server);
     }
+    void Chat()
+    {
+        Window w;
+        pthread_t h,m;
+        struct Pairparam pp ={&w,this};
+
+        pthread_create(&h,NULL,Welcome,&w);
+        pthread_create(&m,NULL,Input,&pp);
+        w.DrawOutput();
+        w.DrawOnline();
+        std::string recvString;
+        std::string showString;
+        for(;;){
+            Message message;
+            RecvMsg(recvString);
+            message.ToRecvValue(recvString);
+            showString = message.Nick_Name();
+            showString +="-";
+            showString += message.School();
+            showString +="-";
+            showString +=message.Text();   
+            w.PutStringToOutput(showString);         
+        }
+    }
+
+    // void Chat()
+    // {
+
+    //         /*以下注释代码 用以上代码 替换*/
+    //         // std::cout<<"Input you name:";
+    //         // std::cin>>name;
+    //         // std::cout<<"Input shool :";
+    //         // std::cin>>school;
+
+    //         Message msg;
+    //         while(1){
+    //             std::string text;
+    //             std::cout<<"Enter>>";
+    //             std::cin>>text;
+    //             Message msg(nick_name,school,text,id);
+    //             std::string sendString;
+    //             msg.ToSendString(sendString);       //将发送的消息转化成要发送的字符串
+                
+    //             // std::cout<<"debug ToSendString:"<<sendString<<std::endl;
+
+    //             Util::SendMessage(udp_sock,sendString,server);  //send to server
+
+    //             std::string recvString;
+    //             struct sockaddr_in peer;
+
+    //             Util::RecvMessage(udp_sock,recvString,peer);      // recv message from server
+    //             std::cout<<"clien RecvMsg Debug:"<<recvString<<std::endl;
+    //             msg.ToRecvValue(recvString);    //将消息序列化到message对象中
+    //             // std::cout<<"name:"<<msg.Nick_Name()<<std::endl;
+    //             // std::cout<<"school:"<<msg.School()<<std::endl;
+    //             // std::cout<<"Text:"<<msg.Text()<<std::endl;
+    //         }
+   
+    // }
+
+    ~ChatClient(){}
 };

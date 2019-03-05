@@ -21,19 +21,22 @@ class DataPool{
 			product_step = 0;
     		consume_step = 0;
 		}
-		void PutMessage(std::string &message){
+		void PutMessage(const std::string &message){
 			sem_wait(&blank_sem);
-			pool[product_step++] = message;
+			pool[product_step] = message;
+			product_step++;
 			product_step %= cap;
-			sem_post(&blank_sem);		
+			sem_post(&data_sem);		
 		}
 
 		void GetMessage(std::string &message){
 			sem_wait(&data_sem);
-			pool[consume_step++] = message;
+			message = pool[consume_step];
+			consume_step++;
 			consume_step %= cap;
-			sem_post(&data_sem);
+			sem_post(&blank_sem);
 		}
+
 		~DataPool()
 		{
 			sem_destroy(&data_sem);

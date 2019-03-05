@@ -1,5 +1,5 @@
-#include "Socket.hpp"
 #include<iostream>
+#include "Socket.hpp"
 #include"ChatServer.hpp"
 
 void Usage(){
@@ -18,7 +18,7 @@ void *RunProduct(void *arg)
 
 void *RunConsume(void* arg){
     pthread_detach(pthread_self());
-    for(;;){
+    while(1){
         ChatServer *p = (ChatServer*)arg ;  
         p->Consume(); 
     }
