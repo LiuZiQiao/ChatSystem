@@ -1,0 +1,382 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Accept	Socket.hpp	/^	static int Accept(int sock,std::string &out_ip,int &out_port)$/;"	f	class:SocketApi
+AddOnlineuser	UserManager.hpp	/^    void AddOnlineuser(unsigned int id,struct sockaddr_in &peer)    \/\/上线$/;"	f	class:UserManager
+Args	lib/include/json/value.h	/^      typedef std::vector<PathArgument> Args;$/;"	t	class:Json::Path
+ArrayIndex	lib/include/json/value.h	/^      typedef UInt ArrayIndex;$/;"	t	class:Json::Value
+ArrayIndex	lib/include/json/value.h	/^      typedef Value::ArrayIndex ArrayIndex;$/;"	t	class:Json::ValueInternalArray
+BACKLOG	Socket.hpp	13;"	d
+Bind	Socket.hpp	/^	static int Bind(int sock,int port)$/;"	f	class:SocketApi
+BucketIndex	lib/include/json/value.h	/^      typedef unsigned int BucketIndex;$/;"	t	class:Json::ValueInternalMap
+CPPTL_AUTOLINK_DLL	lib/include/json/autolink.h	12;"	d
+CPPTL_AUTOLINK_DLL	lib/include/json/autolink.h	14;"	d
+CPPTL_AUTOLINK_NAME	lib/include/json/autolink.h	11;"	d
+CPPTL_JSON_FEATURES_H_INCLUDED	lib/include/json/features.h	2;"	d
+CPPTL_JSON_H_INCLUDED	lib/include/json/value.h	2;"	d
+CPPTL_JSON_READER_H_INCLUDED	lib/include/json/reader.h	2;"	d
+CZString	lib/include/json/value.h	/^      class CZString $/;"	c	class:Json::Value
+Char	lib/include/json/reader.h	/^      typedef char Char;$/;"	t	class:Json::Reader
+Chat	ChatClient.hpp	/^    void Chat()$/;"	f	class:ChatClient
+ChatClient	ChatClient.hpp	/^    ChatClient(std::string ip_):ip(ip_)$/;"	f	class:ChatClient
+ChatClient	ChatClient.hpp	/^class ChatClient$/;"	c
+ChatServer	ChatServer.hpp	/^    ChatServer(int tcp_port_=8080,int udp_port_=8888):$/;"	f	class:ChatServer
+ChatServer	ChatServer.hpp	/^class ChatServer$/;"	c
+Check	UserManager.hpp	/^    unsigned int Check(unsigned int id,std::string passwd){$/;"	f	class:UserManager
+ChildValues	lib/include/json/writer.h	/^      typedef std::vector<std::string> ChildValues;$/;"	t	class:Json::StyledStreamWriter
+ChildValues	lib/include/json/writer.h	/^      typedef std::vector<std::string> ChildValues;$/;"	t	class:Json::StyledWriter
+CommentInfo	lib/include/json/value.h	/^      struct CommentInfo$/;"	s	class:Json::Value
+CommentPlacement	lib/include/json/value.h	/^   enum CommentPlacement$/;"	g	namespace:Json
+Connect	Socket.hpp	/^	static bool Connect(const int &sock,std::string peer_ip,const int &port)$/;"	f	class:SocketApi
+ConnectServer	ChatClient.hpp	/^    bool ConnectServer()$/;"	f	class:ChatClient
+Consume	ChatServer.hpp	/^    void Consume(){$/;"	f	class:ChatServer
+DataPool	DataPool.hpp	/^		DataPool(int cap_=512):cap(cap_),pool(cap_)$/;"	f	class:DataPool
+DataPool	DataPool.hpp	/^class DataPool{$/;"	c
+DrawHeader	Window.hpp	/^		void DrawHeader()$/;"	f	class:Window
+DrawInput	Window.hpp	/^		void DrawInput()$/;"	f	class:Window
+DrawOnline	Window.hpp	/^		void DrawOnline()$/;"	f	class:Window
+DrawOutput	Window.hpp	/^		void DrawOutput()$/;"	f	class:Window
+DuplicationPolicy	lib/include/json/value.h	/^         enum DuplicationPolicy $/;"	g	class:Json::Value::CZString
+ERROR	Log.hpp	9;"	d
+ErrorInfo	lib/include/json/reader.h	/^      class ErrorInfo$/;"	c	class:Json::Reader
+Errors	lib/include/json/reader.h	/^      typedef std::deque<ErrorInfo> Errors;$/;"	t	class:Json::Reader
+FastWriter	lib/include/json/writer.h	/^   class JSON_API FastWriter : public Writer$/;"	c	namespace:Json
+Features	lib/include/json/features.h	/^   class JSON_API Features$/;"	c	namespace:Json
+GetInfo	UserManager.hpp	/^    void GetInfo(const unsigned int id,std::string &name,std::string &school)$/;"	f	class:UserManager
+GetMessage	DataPool.hpp	/^		void GetMessage(std::string &message){$/;"	f	class:DataPool
+GetStringFromWin	Window.hpp	/^		void GetStringFromWin(WINDOW *w,std::string &s)$/;"	f	class:Window
+HandlerRequest	ChatServer.hpp	/^    static void *HandlerRequest(void *arg)$/;"	f	class:ChatServer
+HashKey	lib/include/json/value.h	/^      typedef unsigned int HashKey;$/;"	t	class:Json::ValueInternalMap
+INCLUDE	Makefile	/^INCLUDE=-I.\/lib\/include$/;"	m
+Id	Message.hpp	/^    const unsigned int &Id(){$/;"	f	class:Message
+InArgs	lib/include/json/value.h	/^      typedef std::vector<const PathArgument *> InArgs;$/;"	t	class:Json::Path
+InitClient	ChatClient.hpp	/^    void InitClient()$/;"	f	class:ChatClient
+InitServer	ChatServer.hpp	/^    void InitServer()$/;"	f	class:ChatServer
+Insert	UserManager.hpp	/^    unsigned int Insert(const std::string &name,const std::string &school,const std::string &passwd){$/;"	f	class:UserManager
+Int	lib/include/json/forwards.h	/^   typedef int Int;$/;"	t	namespace:Json
+Int	lib/include/json/value.h	/^      typedef Json::Int Int;$/;"	t	class:Json::Value
+IntToString	Util.hpp	/^    static std::string IntToString(int x){$/;"	f	class:Util
+InternalFlags	lib/include/json/value.h	/^      enum InternalFlags { $/;"	g	class:Json::ValueInternalLink
+IsPasswdOk	UserManager.hpp	/^    bool IsPasswdOk(const std::string &p){$/;"	f	class:User
+IteratorState	lib/include/json/value.h	/^         IteratorState() $/;"	f	struct:Json::ValueInternalArray::IteratorState
+IteratorState	lib/include/json/value.h	/^         IteratorState() $/;"	f	struct:Json::ValueInternalMap::IteratorState
+IteratorState	lib/include/json/value.h	/^      struct IteratorState \/\/ Must be a POD$/;"	s	class:Json::ValueInternalArray
+IteratorState	lib/include/json/value.h	/^      struct IteratorState$/;"	s	class:Json::ValueInternalMap
+JSON_API	lib/include/json/config.h	34;"	d
+JSON_API	lib/include/json/config.h	36;"	d
+JSON_API	lib/include/json/config.h	38;"	d
+JSON_API	lib/include/json/config.h	40;"	d
+JSON_AUTOLINK_H_INCLUDED	lib/include/json/autolink.h	2;"	d
+JSON_CONFIG_H_INCLUDED	lib/include/json/config.h	2;"	d
+JSON_FORWARDS_H_INCLUDED	lib/include/json/forwards.h	2;"	d
+JSON_JSON_H_INCLUDED	lib/include/json/json.h	2;"	d
+JSON_USE_CPPTL	lib/include/json/config.h	29;"	d
+JSON_USE_EXCEPTION	lib/include/json/config.h	24;"	d
+JSON_WRITER_H_INCLUDED	lib/include/json/writer.h	2;"	d
+Json	lib/include/json/features.h	/^namespace Json {$/;"	n
+Json	lib/include/json/forwards.h	/^namespace Json {$/;"	n
+Json	lib/include/json/reader.h	/^namespace Json {$/;"	n
+Json	lib/include/json/value.h	/^namespace Json {$/;"	n
+Json	lib/include/json/writer.h	/^namespace Json {$/;"	n
+Kind	lib/include/json/value.h	/^      enum Kind$/;"	g	class:Json::PathArgument
+LDFLAGA	Makefile	/^LDFLAGA=-std=c++11 -lpthread -ljsoncpp -static$/;"	m
+LIB_PATH	Makefile	/^LIB_PATH=-L.\/lib\/lib$/;"	m
+LOG	Log.hpp	5;"	d
+Listen	Socket.hpp	/^	static int Listen(int sock)$/;"	f	class:SocketApi
+Location	lib/include/json/reader.h	/^      typedef const Char *Location;$/;"	t	class:Json::Reader
+Lock	UserManager.hpp	/^    void Lock()$/;"	f	class:UserManager
+Log	Log.hpp	/^void Log(std::string msg,int level,char* file,int line)$/;"	f
+Login	ChatClient.hpp	/^    bool Login()$/;"	f	class:ChatClient
+LoginEnter	ChatClient.hpp	/^    bool LoginEnter(unsigned int &id,std::string &password)$/;"	f	class:ChatClient
+LoginUser	ChatServer.hpp	/^    unsigned int LoginUser(unsigned int id,std::string &passwd,const std::string &ip,const unsigned int &port){$/;"	f	class:ChatServer
+Members	lib/include/json/value.h	/^      typedef std::vector<std::string> Members;$/;"	t	class:Json::Value
+Message	Message.hpp	/^    Message(){}$/;"	f	class:Message
+Message	Message.hpp	/^    Message(const std::string &n_,const std::string s_,const std::string t_,const unsigned int id_):$/;"	f	class:Message
+Message	Message.hpp	/^class Message$/;"	c
+NORMAL	Log.hpp	7;"	d
+Nick_Name	Message.hpp	/^    const std::string &Nick_Name()$/;"	f	class:Message
+Nodes	lib/include/json/reader.h	/^      typedef std::stack<Value *> Nodes;$/;"	t	class:Json::Reader
+ObjectValues	lib/include/json/value.h	/^      typedef CppTL::SmallMap<CZString, Value> ObjectValues;$/;"	t	class:Json::Value
+ObjectValues	lib/include/json/value.h	/^      typedef std::map<CZString, Value> ObjectValues;$/;"	t	class:Json::Value
+OnlineUser	UserManager.hpp	/^    std::unordered_map<unsigned int ,struct sockaddr_in> OnlineUser()$/;"	f	class:UserManager
+PageIndex	lib/include/json/value.h	/^      typedef unsigned int PageIndex;$/;"	t	class:Json::ValueInternalArray
+Path	lib/include/json/value.h	/^   class Path$/;"	c	namespace:Json
+PathArgument	lib/include/json/value.h	/^   class PathArgument$/;"	c	namespace:Json
+Pragma	ChatServer.hpp	/^    Pragma(int sock_,ChatServer *sp_, std::string ip_,int p_):$/;"	f	class:Pragma
+Pragma	ChatServer.hpp	/^class Pragma$/;"	c
+Product	ChatServer.hpp	/^    void Product()$/;"	f	class:ChatServer
+PutMessage	DataPool.hpp	/^		void PutMessage(const std::string &message){$/;"	f	class:DataPool
+PutStringToWin	Window.hpp	/^		void PutStringToWin(WINDOW *w,int y,int x,std::string &message)$/;"	f	class:Window
+Reader	lib/include/json/reader.h	/^   class JSON_API Reader$/;"	c	namespace:Json
+RecvMessage	Util.hpp	/^    static void RecvMessage(int sock,std::string &message,struct sockaddr_in &peer)$/;"	f	class:Util
+RecvOneLine	Socket.hpp	/^	static void RecvOneLine(int sock,std::string &outString){$/;"	f	class:SocketApi
+RecvRequest	Socket.hpp	/^	static void RecvRequest(int sock,Request &rq)$/;"	f	class:SocketApi
+Register	ChatClient.hpp	/^    bool Register(){$/;"	f	class:ChatClient
+RegisterEnter	ChatClient.hpp	/^	bool RegisterEnter(std::string &nick_name,std::string &school,std::string &password)$/;"	f	class:ChatClient
+RegisterUser	ChatServer.hpp	/^    unsigned int  RegisterUser(std::string &name,std::string &school,std::string &passwd)$/;"	f	class:ChatServer
+Request	Request.hpp	/^    Request(\/* args *\/):blank("\\n"){}$/;"	f	class:Request
+Request	Request.hpp	/^class Request$/;"	c
+RunConsume	ChatServer.cc	/^void *RunConsume(void* arg){$/;"	f
+RunProduct	ChatServer.cc	/^void *RunProduct(void *arg)$/;"	f
+School	Message.hpp	/^    const std::string &School(){$/;"	f	class:Message
+SelfType	lib/include/json/value.h	/^      typedef ValueConstIterator SelfType;$/;"	t	class:Json::ValueConstIterator
+SelfType	lib/include/json/value.h	/^      typedef ValueIterator SelfType;$/;"	t	class:Json::ValueIterator
+SelfType	lib/include/json/value.h	/^      typedef ValueIteratorBase SelfType;$/;"	t	class:Json::ValueIteratorBase
+SendMessage	Util.hpp	/^    static void SendMessage(int sock,const std::string &message,struct sockaddr_in &peer)$/;"	f	class:Util
+SendRequest	Socket.hpp	/^	static void SendRequest(int sock,Request &rq)$/;"	f	class:SocketApi
+Serializ	Util.hpp	/^    static void Serializ(Json::Value &root,std::string &string)$/;"	f	class:Util
+Socket	Socket.hpp	/^	static int Socket(int type)$/;"	f	class:SocketApi
+SocketApi	Socket.hpp	/^class SocketApi$/;"	c
+StartServer	ChatServer.hpp	/^    void StartServer()$/;"	f	class:ChatServer
+StaticString	lib/include/json/value.h	/^      explicit StaticString( const char *czstring )$/;"	f	class:Json::StaticString
+StaticString	lib/include/json/value.h	/^   class JSON_API StaticString$/;"	c	namespace:Json
+StringToInt	Util.hpp	/^    static int StringToInt(std::string &str){$/;"	f	class:Util
+StyledStreamWriter	lib/include/json/writer.h	/^   class JSON_API StyledStreamWriter$/;"	c	namespace:Json
+StyledWriter	lib/include/json/writer.h	/^   class JSON_API StyledWriter: public Writer$/;"	c	namespace:Json
+TCP_PORT	ChatClient.hpp	7;"	d
+Text	Message.hpp	/^    const std::string &Text(){$/;"	f	class:Message
+ToRecvValue	Message.hpp	/^    void ToRecvValue(std::string &recvString)$/;"	f	class:Message
+ToSendString	Message.hpp	/^    void ToSendString(std::string &sendString){$/;"	f	class:Message
+Token	lib/include/json/reader.h	/^      class Token$/;"	c	class:Json::Reader
+TokenType	lib/include/json/reader.h	/^      enum TokenType$/;"	g	class:Json::Reader
+UDP_PORT	ChatClient.hpp	8;"	d
+UInt	lib/include/json/forwards.h	/^   typedef unsigned int UInt;$/;"	t	namespace:Json
+UInt	lib/include/json/value.h	/^      typedef Json::UInt UInt;$/;"	t	class:Json::Value
+UnLock	UserManager.hpp	/^    void UnLock(){$/;"	f	class:UserManager
+UnSerializ	Util.hpp	/^    static void UnSerializ(std::string &string,Json::Value &root)$/;"	f	class:Util
+Usage	ChatClient.cc	/^void Usage(){$/;"	f
+Usage	ChatServer.cc	/^void Usage(){$/;"	f
+User	UserManager.hpp	/^    User(){}$/;"	f	class:User
+User	UserManager.hpp	/^    User(std::string n_,std::string s_,std::string p_):$/;"	f	class:User
+User	UserManager.hpp	/^class User$/;"	c
+UserManager	UserManager.hpp	/^    UserManager(unsigned int x = 10000){$/;"	f	class:UserManager
+UserManager	UserManager.hpp	/^class UserManager$/;"	c
+Util	Util.hpp	/^class Util$/;"	c
+Value	lib/include/json/value.h	/^   class JSON_API Value $/;"	c	namespace:Json
+ValueAllocator	lib/include/json/value.h	/^   class ValueAllocator$/;"	c	namespace:Json
+ValueArrayAllocator	lib/include/json/value.h	/^   class JSON_API ValueArrayAllocator$/;"	c	namespace:Json
+ValueConstIterator	lib/include/json/value.h	/^   class ValueConstIterator : public ValueIteratorBase$/;"	c	namespace:Json
+ValueHolder	lib/include/json/value.h	/^      union ValueHolder$/;"	u	class:Json::Value
+ValueInternalArray	lib/include/json/value.h	/^   class JSON_API ValueInternalArray$/;"	c	namespace:Json
+ValueInternalLink	lib/include/json/value.h	/^   class JSON_API ValueInternalLink$/;"	c	namespace:Json
+ValueInternalMap	lib/include/json/value.h	/^   class JSON_API ValueInternalMap$/;"	c	namespace:Json
+ValueIterator	lib/include/json/value.h	/^   class ValueIterator : public ValueIteratorBase$/;"	c	namespace:Json
+ValueIteratorBase	lib/include/json/value.h	/^   class ValueIteratorBase$/;"	c	namespace:Json
+ValueMapAllocator	lib/include/json/value.h	/^   class JSON_API ValueMapAllocator$/;"	c	namespace:Json
+ValueType	lib/include/json/value.h	/^   enum ValueType$/;"	g	namespace:Json
+WARNING	Log.hpp	8;"	d
+Window	Window.hpp	/^		Window(){$/;"	f	class:Window
+Window	Window.hpp	/^class Window{$/;"	c
+Writer	lib/include/json/writer.h	/^   class JSON_API Writer$/;"	c	namespace:Json
+addChildValues_	lib/include/json/writer.h	/^      bool addChildValues_;$/;"	m	class:Json::StyledStreamWriter
+addChildValues_	lib/include/json/writer.h	/^      bool addChildValues_;$/;"	m	class:Json::StyledWriter
+allowComments_	lib/include/json/features.h	/^      bool allowComments_;$/;"	m	class:Json::Features
+args_	lib/include/json/value.h	/^      Args args_;$/;"	m	class:Json::Path
+arrayValue	lib/include/json/value.h	/^      arrayValue,    \/\/\/< array value (ordered list)$/;"	e	enum:Json::ValueType
+array_	lib/include/json/value.h	/^         ValueInternalArray *array_;$/;"	m	struct:Json::ValueInternalArray::IteratorState
+array_	lib/include/json/value.h	/^         ValueInternalArray *array_;$/;"	m	union:Json::Value::ValueHolder
+array_	lib/include/json/value.h	/^         ValueInternalArray::IteratorState array_;$/;"	m	union:Json::ValueIteratorBase::__anon4
+assign_id	UserManager.hpp	/^    unsigned int assign_id;$/;"	m	class:UserManager
+begin_	lib/include/json/reader.h	/^      Location begin_;$/;"	m	class:Json::Reader
+blank	Request.hpp	/^    std::string blank;$/;"	m	class:Request
+blank_sem	DataPool.hpp	/^		sem_t blank_sem;$/;"	m	class:DataPool
+bool_	lib/include/json/value.h	/^         bool bool_;$/;"	m	union:Json::Value::ValueHolder
+booleanValue	lib/include/json/value.h	/^      booleanValue,  \/\/\/< bool value$/;"	e	enum:Json::ValueType
+bucketIndex_	lib/include/json/value.h	/^         BucketIndex bucketIndex_;$/;"	m	struct:Json::ValueInternalMap::IteratorState
+bucketsSize_	lib/include/json/value.h	/^      BucketIndex bucketsSize_;$/;"	m	class:Json::ValueInternalMap
+buckets_	lib/include/json/value.h	/^      ValueInternalLink *buckets_;$/;"	m	class:Json::ValueInternalMap
+c_str	lib/include/json/value.h	/^      const char *c_str() const$/;"	f	class:Json::StaticString
+cap	DataPool.hpp	/^		int cap;$/;"	m	class:DataPool
+childValues_	lib/include/json/writer.h	/^      ChildValues childValues_;$/;"	m	class:Json::StyledStreamWriter
+childValues_	lib/include/json/writer.h	/^      ChildValues childValues_;$/;"	m	class:Json::StyledWriter
+client	Makefile	/^client=ChatClient$/;"	m
+collectComments_	lib/include/json/reader.h	/^      bool collectComments_;$/;"	m	class:Json::Reader
+commentAfter	lib/include/json/value.h	/^      commentAfter,             \/\/\/< a comment on the line after a value (only make sense for root value)$/;"	e	enum:Json::CommentPlacement
+commentAfterOnSameLine	lib/include/json/value.h	/^      commentAfterOnSameLine,   \/\/\/< a comment just after a value on the same line$/;"	e	enum:Json::CommentPlacement
+commentBefore	lib/include/json/value.h	/^      commentBefore = 0,        \/\/\/< a comment placed on the line before a value$/;"	e	enum:Json::CommentPlacement
+comment_	lib/include/json/value.h	/^         char *comment_;$/;"	m	struct:Json::Value::CommentInfo
+commentsBefore_	lib/include/json/reader.h	/^      std::string commentsBefore_;$/;"	m	class:Json::Reader
+comments_	lib/include/json/value.h	/^      CommentInfo *comments_;$/;"	m	class:Json::Value
+const_iterator	lib/include/json/value.h	/^      typedef ValueConstIterator const_iterator;$/;"	t	class:Json::Value
+consume_step	DataPool.hpp	/^    	int consume_step;$/;"	m	class:DataPool
+content_length	Request.hpp	/^    std::string content_length;$/;"	m	class:Request
+cstr_	lib/include/json/value.h	/^         const char *cstr_;$/;"	m	class:Json::Value::CZString
+currentItemIndex_	lib/include/json/value.h	/^         unsigned int currentItemIndex_;$/;"	m	struct:Json::ValueInternalArray::IteratorState
+currentPageIndex_	lib/include/json/value.h	/^         Value **currentPageIndex_;$/;"	m	struct:Json::ValueInternalArray::IteratorState
+current_	lib/include/json/reader.h	/^      Location current_;$/;"	m	class:Json::Reader
+current_	lib/include/json/value.h	/^      Value::ObjectValues::iterator current_;$/;"	m	class:Json::ValueIteratorBase
+data_sem	DataPool.hpp	/^		sem_t data_sem;$/;"	m	class:DataPool
+difference_type	lib/include/json/value.h	/^      typedef int difference_type;$/;"	t	class:Json::ValueConstIterator
+difference_type	lib/include/json/value.h	/^      typedef int difference_type;$/;"	t	class:Json::ValueIterator
+difference_type	lib/include/json/value.h	/^      typedef int difference_type;$/;"	t	class:Json::ValueIteratorBase
+document_	lib/include/json/reader.h	/^      std::string document_;$/;"	m	class:Json::Reader
+document_	lib/include/json/writer.h	/^      std::ostream* document_;$/;"	m	class:Json::StyledStreamWriter
+document_	lib/include/json/writer.h	/^      std::string document_;$/;"	m	class:Json::FastWriter
+document_	lib/include/json/writer.h	/^      std::string document_;$/;"	m	class:Json::StyledWriter
+duplicate	lib/include/json/value.h	/^            duplicate,$/;"	e	enum:Json::Value::CZString::DuplicationPolicy
+duplicateOnCopy	lib/include/json/value.h	/^            duplicateOnCopy$/;"	e	enum:Json::Value::CZString::DuplicationPolicy
+end_	lib/include/json/reader.h	/^         Location end_;$/;"	m	class:Json::Reader::Token
+end_	lib/include/json/reader.h	/^      Location end_;$/;"	m	class:Json::Reader
+errors_	lib/include/json/reader.h	/^      Errors errors_;$/;"	m	class:Json::Reader
+extra_	lib/include/json/reader.h	/^         Location extra_;$/;"	m	class:Json::Reader::ErrorInfo
+features_	lib/include/json/reader.h	/^      Features features_;$/;"	m	class:Json::Reader
+flagAvailable	lib/include/json/value.h	/^         flagAvailable = 0,$/;"	e	enum:Json::ValueInternalLink::InternalFlags
+flagUsed	lib/include/json/value.h	/^         flagUsed = 1$/;"	e	enum:Json::ValueInternalLink::InternalFlags
+getName	UserManager.hpp	/^    std::string getName()$/;"	f	class:User
+getSchool	UserManager.hpp	/^    std::string getSchool()$/;"	f	class:User
+header	Window.hpp	/^		WINDOW *header;$/;"	m	class:Window
+id	ChatClient.hpp	/^    unsigned int id;$/;"	m	class:ChatClient
+id	Message.hpp	/^    unsigned int id;$/;"	m	class:Message
+indentSize_	lib/include/json/writer.h	/^      int indentSize_;$/;"	m	class:Json::StyledWriter
+indentString_	lib/include/json/writer.h	/^      std::string indentString_;$/;"	m	class:Json::StyledStreamWriter
+indentString_	lib/include/json/writer.h	/^      std::string indentString_;$/;"	m	class:Json::StyledWriter
+indentation_	lib/include/json/writer.h	/^      std::string indentation_;$/;"	m	class:Json::StyledStreamWriter
+index_	lib/include/json/value.h	/^         int index_;$/;"	m	class:Json::Value::CZString
+index_	lib/include/json/value.h	/^      UInt index_;$/;"	m	class:Json::PathArgument
+input	Window.hpp	/^		WINDOW *input;$/;"	m	class:Window
+intValue	lib/include/json/value.h	/^      intValue,      \/\/\/< signed integer value$/;"	e	enum:Json::ValueType
+int_	lib/include/json/value.h	/^         Int int_;$/;"	m	union:Json::Value::ValueHolder
+ip	ChatClient.hpp	/^    std::string ip;$/;"	m	class:ChatClient
+ip	ChatServer.hpp	/^    std::string ip;$/;"	m	class:Pragma
+isArray_	lib/include/json/value.h	/^      bool isArray_;$/;"	m	class:Json::ValueIteratorBase
+isItemAvailable	lib/include/json/value.h	/^      inline bool isItemAvailable() const$/;"	f	class:Json::Value
+isMemberNameStatic	lib/include/json/value.h	/^      inline bool isMemberNameStatic() const$/;"	f	class:Json::Value
+isNull_	lib/include/json/value.h	/^      bool isNull_;$/;"	m	class:Json::ValueIteratorBase
+itemCount_	lib/include/json/value.h	/^      BucketIndex itemCount_;$/;"	m	class:Json::ValueInternalMap
+itemIndex_	lib/include/json/value.h	/^         BucketIndex itemIndex_;$/;"	m	struct:Json::ValueInternalMap::IteratorState
+itemPerLink	lib/include/json/value.h	/^      enum { itemPerLink = 6 };  \/\/ sizeof(ValueInternalLink) = 128 on 32 bits architecture.$/;"	e	enum:Json::ValueInternalLink::__anon2
+itemsPerPage	lib/include/json/value.h	/^      enum { itemsPerPage = 8 };    \/\/ should be a power of 2 for fast divide and modulo.$/;"	e	enum:Json::ValueInternalArray::__anon3
+items_	lib/include/json/value.h	/^      Value items_[itemPerLink];$/;"	m	class:Json::ValueInternalLink
+iterator	lib/include/json/value.h	/^      typedef ValueIterator iterator;$/;"	t	class:Json::Value
+iterator_	lib/include/json/value.h	/^      } iterator_;$/;"	m	class:Json::ValueIteratorBase	typeref:union:Json::ValueIteratorBase::__anon4
+key_	lib/include/json/value.h	/^      std::string key_;$/;"	m	class:Json::PathArgument
+keys_	lib/include/json/value.h	/^      char *keys_[itemPerLink];$/;"	m	class:Json::ValueInternalLink
+kindIndex	lib/include/json/value.h	/^         kindIndex,$/;"	e	enum:Json::PathArgument::Kind
+kindKey	lib/include/json/value.h	/^         kindKey$/;"	e	enum:Json::PathArgument::Kind
+kindNone	lib/include/json/value.h	/^         kindNone = 0,$/;"	e	enum:Json::PathArgument::Kind
+kind_	lib/include/json/value.h	/^      Kind kind_;$/;"	m	class:Json::PathArgument
+lastValueEnd_	lib/include/json/reader.h	/^      Location lastValueEnd_;$/;"	m	class:Json::Reader
+lastValue_	lib/include/json/reader.h	/^      Value *lastValue_;$/;"	m	class:Json::Reader
+link_	lib/include/json/value.h	/^         ValueInternalLink *link_;$/;"	m	struct:Json::ValueInternalMap::IteratorState
+lock	UserManager.hpp	/^    pthread_mutex_t lock;$/;"	m	class:UserManager
+log_level	Log.hpp	/^const char *log_level[]={$/;"	v
+main	ChatClient.cc	/^int main(int argc,char *argv[])$/;"	f
+main	ChatServer.cc	/^int main(int argc,char* argv[])$/;"	f
+main	test.cc	/^int main()$/;"	f
+map_	lib/include/json/value.h	/^         ObjectValues *map_;$/;"	m	union:Json::Value::ValueHolder
+map_	lib/include/json/value.h	/^         ValueInternalMap *map_;$/;"	m	struct:Json::ValueInternalMap::IteratorState
+map_	lib/include/json/value.h	/^         ValueInternalMap *map_;$/;"	m	union:Json::Value::ValueHolder
+map_	lib/include/json/value.h	/^         ValueInternalMap::IteratorState map_;$/;"	m	union:Json::ValueIteratorBase::__anon4
+maxInt	lib/include/json/value.h	/^      static const Int maxInt;$/;"	m	class:Json::Value
+maxUInt	lib/include/json/value.h	/^      static const UInt maxUInt;$/;"	m	class:Json::Value
+menu	ChatClient.cc	/^static void menu(int &select)$/;"	f	file:
+message_	lib/include/json/reader.h	/^         std::string message_;$/;"	m	class:Json::Reader::ErrorInfo
+method	Request.hpp	/^    std::string method;$/;"	m	class:Request
+minInt	lib/include/json/value.h	/^      static const Int minInt;$/;"	m	class:Json::Value
+next_	lib/include/json/value.h	/^      ValueInternalLink *next_;$/;"	m	class:Json::ValueInternalLink
+nick_name	ChatClient.hpp	/^    std::string nick_name;$/;"	m	class:ChatClient
+nick_name	Message.hpp	/^    std::string nick_name;$/;"	m	class:Message
+nick_name	UserManager.hpp	/^    std::string nick_name;$/;"	m	class:User
+noDuplication	lib/include/json/value.h	/^            noDuplication = 0,$/;"	e	enum:Json::Value::CZString::DuplicationPolicy
+nodes_	lib/include/json/reader.h	/^      Nodes nodes_;$/;"	m	class:Json::Reader
+null	lib/include/json/value.h	/^      static const Value null;$/;"	m	class:Json::Value
+nullValue	lib/include/json/value.h	/^      nullValue = 0, \/\/\/< 'null' value$/;"	e	enum:Json::ValueType
+numberOfCommentPlacement	lib/include/json/value.h	/^      numberOfCommentPlacement$/;"	e	enum:Json::CommentPlacement
+objectValue	lib/include/json/value.h	/^      objectValue    \/\/\/< object value (collection of name\/value pairs).$/;"	e	enum:Json::ValueType
+online	Window.hpp	/^		WINDOW *online;$/;"	m	class:Window
+onlineusers	UserManager.hpp	/^    std::unordered_map<unsigned int,struct sockaddr_in> onlineusers;$/;"	m	class:UserManager
+operator !=	lib/include/json/value.h	/^      bool operator !=( const SelfType &other ) const$/;"	f	class:Json::ValueIteratorBase
+operator *	lib/include/json/value.h	/^      reference operator *() const$/;"	f	class:Json::ValueConstIterator
+operator *	lib/include/json/value.h	/^      reference operator *() const$/;"	f	class:Json::ValueIterator
+operator ++	lib/include/json/value.h	/^      SelfType &operator++()$/;"	f	class:Json::ValueConstIterator
+operator ++	lib/include/json/value.h	/^      SelfType &operator++()$/;"	f	class:Json::ValueIterator
+operator ++	lib/include/json/value.h	/^      SelfType operator++( int )$/;"	f	class:Json::ValueConstIterator
+operator ++	lib/include/json/value.h	/^      SelfType operator++( int )$/;"	f	class:Json::ValueIterator
+operator -	lib/include/json/value.h	/^      difference_type operator -( const SelfType &other ) const$/;"	f	class:Json::ValueIteratorBase
+operator --	lib/include/json/value.h	/^      SelfType &operator--()$/;"	f	class:Json::ValueConstIterator
+operator --	lib/include/json/value.h	/^      SelfType &operator--()$/;"	f	class:Json::ValueIterator
+operator --	lib/include/json/value.h	/^      SelfType operator--( int )$/;"	f	class:Json::ValueConstIterator
+operator --	lib/include/json/value.h	/^      SelfType operator--( int )$/;"	f	class:Json::ValueIterator
+operator ==	lib/include/json/value.h	/^      bool operator ==( const SelfType &other ) const$/;"	f	class:Json::ValueIteratorBase
+operator const char *	lib/include/json/value.h	/^      operator const char *() const$/;"	f	class:Json::StaticString
+output	Window.hpp	/^		WINDOW *output;$/;"	m	class:Window
+pageCount_	lib/include/json/value.h	/^      PageIndex pageCount_;$/;"	m	class:Json::ValueInternalArray
+pages_	lib/include/json/value.h	/^      Value **pages_;$/;"	m	class:Json::ValueInternalArray
+passwd	ChatClient.hpp	/^    std::string passwd;$/;"	m	class:ChatClient
+password	UserManager.hpp	/^    std::string password;$/;"	m	class:User
+pointer	lib/include/json/value.h	/^      typedef Value *pointer;$/;"	t	class:Json::ValueIterator
+pointer	lib/include/json/value.h	/^      typedef const Value *pointer;$/;"	t	class:Json::ValueConstIterator
+pool	ChatServer.hpp	/^    DataPool pool;$/;"	m	class:ChatServer
+pool	DataPool.hpp	/^		std::vector<std::string> pool;$/;"	m	class:DataPool
+port	ChatServer.hpp	/^    int port;$/;"	m	class:Pragma
+previous_	lib/include/json/value.h	/^      ValueInternalLink *previous_;$/;"	m	class:Json::ValueInternalLink
+product_step	DataPool.hpp	/^		int product_step;$/;"	m	class:DataPool
+realValue	lib/include/json/value.h	/^      realValue,     \/\/\/< double value$/;"	e	enum:Json::ValueType
+real_	lib/include/json/value.h	/^         double real_;$/;"	m	union:Json::Value::ValueHolder
+reference	lib/include/json/value.h	/^      typedef Value &reference;$/;"	t	class:Json::ValueIterator
+reference	lib/include/json/value.h	/^      typedef const Value &reference;$/;"	t	class:Json::ValueConstIterator
+rightMargin_	lib/include/json/writer.h	/^      int rightMargin_;$/;"	m	class:Json::StyledStreamWriter
+rightMargin_	lib/include/json/writer.h	/^      int rightMargin_;$/;"	m	class:Json::StyledWriter
+school	ChatClient.hpp	/^    std::string school;$/;"	m	class:ChatClient
+school	Message.hpp	/^    std::string school;$/;"	m	class:Message
+school	UserManager.hpp	/^    std::string school;$/;"	m	class:User
+server	ChatClient.hpp	/^    struct sockaddr_in server;$/;"	m	class:ChatClient	typeref:struct:ChatClient::sockaddr_in
+server	Makefile	/^server=ChatServer$/;"	m
+setItemUsed	lib/include/json/value.h	/^      inline void setItemUsed( bool isUsed = true )$/;"	f	class:Json::Value
+setMemberNameIsStatic	lib/include/json/value.h	/^      inline void setMemberNameIsStatic( bool isStatic )$/;"	f	class:Json::Value
+size_	lib/include/json/value.h	/^      ArrayIndex size_;$/;"	m	class:Json::ValueInternalArray
+size_t	lib/include/json/value.h	/^      typedef unsigned int size_t;$/;"	t	class:Json::ValueConstIterator
+size_t	lib/include/json/value.h	/^      typedef unsigned int size_t;$/;"	t	class:Json::ValueIterator
+size_t	lib/include/json/value.h	/^      typedef unsigned int size_t;$/;"	t	class:Json::ValueIteratorBase
+sock	ChatServer.hpp	/^    int sock;$/;"	m	class:Pragma
+sp	ChatServer.hpp	/^    ChatServer *sp;$/;"	m	class:Pragma
+start_	lib/include/json/reader.h	/^         Location start_;$/;"	m	class:Json::Reader::Token
+str_	lib/include/json/value.h	/^      const char *str_;$/;"	m	class:Json::StaticString
+strictRoot_	lib/include/json/features.h	/^      bool strictRoot_;$/;"	m	class:Json::Features
+stringValue	lib/include/json/value.h	/^      stringValue,   \/\/\/< UTF-8 string value$/;"	e	enum:Json::ValueType
+string_	lib/include/json/value.h	/^         char *string_;$/;"	m	union:Json::Value::ValueHolder
+tailLink_	lib/include/json/value.h	/^      ValueInternalLink *tailLink_;$/;"	m	class:Json::ValueInternalMap
+tcp_listen_sock	ChatServer.hpp	/^    int tcp_listen_sock;$/;"	m	class:ChatServer
+tcp_port	ChatServer.hpp	/^    int tcp_port;$/;"	m	class:ChatServer
+tcp_sock	ChatClient.hpp	/^    int tcp_sock;$/;"	m	class:ChatClient
+text	Message.hpp	/^    std::string text;$/;"	m	class:Message
+text	Request.hpp	/^    std::string text;$/;"	m	class:Request
+tokenArrayBegin	lib/include/json/reader.h	/^         tokenArrayBegin,$/;"	e	enum:Json::Reader::TokenType
+tokenArrayEnd	lib/include/json/reader.h	/^         tokenArrayEnd,$/;"	e	enum:Json::Reader::TokenType
+tokenArraySeparator	lib/include/json/reader.h	/^         tokenArraySeparator,$/;"	e	enum:Json::Reader::TokenType
+tokenComment	lib/include/json/reader.h	/^         tokenComment,$/;"	e	enum:Json::Reader::TokenType
+tokenEndOfStream	lib/include/json/reader.h	/^         tokenEndOfStream = 0,$/;"	e	enum:Json::Reader::TokenType
+tokenError	lib/include/json/reader.h	/^         tokenError$/;"	e	enum:Json::Reader::TokenType
+tokenFalse	lib/include/json/reader.h	/^         tokenFalse,$/;"	e	enum:Json::Reader::TokenType
+tokenMemberSeparator	lib/include/json/reader.h	/^         tokenMemberSeparator,$/;"	e	enum:Json::Reader::TokenType
+tokenNull	lib/include/json/reader.h	/^         tokenNull,$/;"	e	enum:Json::Reader::TokenType
+tokenNumber	lib/include/json/reader.h	/^         tokenNumber,$/;"	e	enum:Json::Reader::TokenType
+tokenObjectBegin	lib/include/json/reader.h	/^         tokenObjectBegin,$/;"	e	enum:Json::Reader::TokenType
+tokenObjectEnd	lib/include/json/reader.h	/^         tokenObjectEnd,$/;"	e	enum:Json::Reader::TokenType
+tokenString	lib/include/json/reader.h	/^         tokenString,$/;"	e	enum:Json::Reader::TokenType
+tokenTrue	lib/include/json/reader.h	/^         tokenTrue,$/;"	e	enum:Json::Reader::TokenType
+token_	lib/include/json/reader.h	/^         Token token_;$/;"	m	class:Json::Reader::ErrorInfo
+type_	lib/include/json/reader.h	/^         TokenType type_;$/;"	m	class:Json::Reader::Token
+udp_port	ChatServer.hpp	/^    int udp_port;$/;"	m	class:ChatServer
+udp_sock	ChatClient.hpp	/^    int udp_sock;$/;"	m	class:ChatClient
+udp_work_sock	ChatServer.hpp	/^    int udp_work_sock;$/;"	m	class:ChatServer
+uintValue	lib/include/json/value.h	/^      uintValue,     \/\/\/< unsigned integer value$/;"	e	enum:Json::ValueType
+uint_	lib/include/json/value.h	/^         UInt uint_;$/;"	m	union:Json::Value::ValueHolder
+um	ChatServer.hpp	/^    UserManager um;$/;"	m	class:ChatServer
+unknown	lib/include/json/value.h	/^      enum { unknown = (unsigned)-1 };$/;"	e	enum:Json::ValueAllocator::__anon1
+users	UserManager.hpp	/^    std::unordered_map<unsigned int,User> users;$/;"	m	class:UserManager
+value_	lib/include/json/value.h	/^      } value_;$/;"	m	class:Json::Value	typeref:union:Json::Value::ValueHolder
+yamlCompatiblityEnabled_	lib/include/json/writer.h	/^      bool yamlCompatiblityEnabled_;$/;"	m	class:Json::FastWriter
+~ChatClient	ChatClient.hpp	/^    ~ChatClient(){}$/;"	f	class:ChatClient
+~DataPool	DataPool.hpp	/^		~DataPool()$/;"	f	class:DataPool
+~FastWriter	lib/include/json/writer.h	/^      virtual ~FastWriter(){}$/;"	f	class:Json::FastWriter
+~Message	Message.hpp	/^    ~Message(){}$/;"	f	class:Message
+~Request	Request.hpp	/^    ~Request(){}$/;"	f	class:Request
+~StyledStreamWriter	lib/include/json/writer.h	/^      ~StyledStreamWriter(){}$/;"	f	class:Json::StyledStreamWriter
+~StyledWriter	lib/include/json/writer.h	/^      virtual ~StyledWriter(){}$/;"	f	class:Json::StyledWriter
+~User	UserManager.hpp	/^    ~User(){}$/;"	f	class:User
+~UserManager	UserManager.hpp	/^    ~UserManager(){$/;"	f	class:UserManager
+~Window	Window.hpp	/^		~Window()$/;"	f	class:Window
