@@ -114,9 +114,8 @@ class Window{
 			for(auto i=0; i < size; i++)
 			{
 				PutStringToWin(online,i+2,2,onlineuser[i]);
-				SafeWrefresh(online);
-			}
-			
+				// SafeWrefresh(online);
+			}	
 		}
 
 		void Welcomde()

@@ -15,7 +15,7 @@ const char *log_level[]={
     "Error"
 };
 
-void Log(std::string msg,int level,char* file,int line)
+void Log(std::string msg,int level,const char* file,int line)
 {
     std::cout<<'['<<file<<']'<<":"<<line<<":"<<msg<<"-"<<log_level[level]<<std::endl;
 }

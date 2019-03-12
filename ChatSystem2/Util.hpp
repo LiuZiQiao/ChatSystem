@@ -63,13 +63,14 @@ public:
 
     static void addUser(std::vector<std::string> &online,std::string &f)
     {
-        for(auto it = online.end();it != online.end();it++)
+        for(auto it = online.begin();it != online.end();it++)
         {
             if(*it == f)
             {
                 return ;
             }
         online.push_back(f);
+        // std::cout<<"addUser to Online "<<std::endl;
         }
     }
 };

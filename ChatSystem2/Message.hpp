@@ -45,7 +45,7 @@ public:
         school = root["school"].asString();
         text = root["text"].asString();
         id = root["id"].asInt();
-        id = root["type"].asInt();
+        type = root["type"].asInt();
     }
 
     const std::string &Nick_Name()
