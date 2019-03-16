@@ -140,8 +140,17 @@ public:
 
             bool res = false;
             if(result >= 10000){
-                std::cout<<"Login Success!"<<id<<std::endl;
                 res = true;
+                std::string name_ = "None";
+                std::string school_ = "None";
+                std::string text_ = "I Login";
+                unsigned int type_ = LOGIN_TYPE;
+                unsigned int id_ = result;
+                Message mseg(name_,school_,text_,id_,type_);
+                std::string sendmsg;
+                mseg.ToSendString(sendmsg);
+                SendMsg(sendmsg);
+                std::cout<<"Login Success!"<<id<<std::endl;
             }else{
                 std::cout<<"Login Faild! Code is"<<result<<std::endl; 
             }
@@ -162,6 +171,7 @@ public:
     {
         Util::SendMessage(udp_sock,sendString,server);
     }
+
     static void *Input(void *arg)
     {
         pthread_detach(pthread_self());
@@ -193,21 +203,32 @@ public:
         struct Pairparam pp ={&w,this};
 
         pthread_create(&h,NULL,Welcome,&w);
-        pthread_create(&m,NULL,Input,&pp);
+        pthread_create(&m,NULL,Input,&pp);      //聊天输入线程
         w.DrawOutput();
         w.DrawOnline();
         std::string recvString;
         std::string showString;
+        std::vector<std::string> online;
         for(;;){
             Message message;
             RecvMsg(recvString);
             message.ToRecvValue(recvString);
+
+            if (message.Id() == id && message.Type() == LOGIN_TYPE) {
+                nick_name = message.Nick_Name();
+                school = message.School();
+            }
             showString = message.Nick_Name();
             showString +="-";
             showString += message.School();
+
+            std::string f = showString;
+            Util::addUser(online,f);
+
             showString +="-";
             showString +=message.Text();   
-            w.PutStringToOutput(showString);         
+            w.PutStringToOutput(showString);    
+            w.PutUserToOnline(online);     
         }
     }
 

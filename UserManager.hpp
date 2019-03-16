@@ -20,12 +20,12 @@ public:
         return p == password ? true:false;
     }
 
-    std::string getName()
+    std::string &getName()
     {
         return nick_name;
     }
 
-    std::string getSchool()
+    std::string &getSchool()
     {
         return school;
     }
@@ -116,13 +116,9 @@ public:
     void GetInfo(const unsigned int id,std::string &name,std::string &school)
     {
         Lock();
-        User u;
-        auto us = users.find(id);
-        if(us != users.end())
-        {
-            name = us->second.getName();
-            school = us->second.getSchool();
-            std::cout<<"Find user"<<std::endl;
-        }
+        name = users[id].getName();
+        school = users[id].getSchool();
+        std::cout<<"Find user"<<std::endl;
+        UnLock();
     }
 };

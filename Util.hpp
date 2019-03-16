@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include<string>
+#include<vector>
 #include<sstream>
 #include"Request.hpp"
 #include"json/json.h"
@@ -50,12 +51,26 @@ public:
 
     static void SendMessage(int sock,const std::string &message,struct sockaddr_in &peer)
     {
-        LOG("Sending to ...",NORMAL);
+        // LOG("Sending to ...",NORMAL);
         ssize_t s = sendto(sock,message.c_str(),message.size(),0,(struct sockaddr*)&peer,sizeof(peer));
         if (s <= 0) {
             LOG("sendto error",WARNING);
         }
-        std::cout<<"send over"<<std::endl;
+        // std::cout<<"send over"<<std::endl;
         
+    }
+
+
+    static void addUser(std::vector<std::string> &online,std::string &f)
+    {
+        for(auto it = online.begin();it != online.end();it++)
+        {
+            if(*it == f)
+            {
+                return ;
+            }
+        online.push_back(f);
+        // std::cout<<"addUser to Online "<<std::endl;
+        }
     }
 };

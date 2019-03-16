@@ -4,6 +4,7 @@
 #include<ncurses.h>
 #include<unistd.h>
 #include<string>
+#include<vector>
 #include<string.h>
 #include<pthread.h>
 
@@ -107,6 +108,16 @@ class Window{
 			PutStringToWin(output,line++,2,message);
 		}
 		
+		void PutUserToOnline(std::vector<std::string> &onlineuser)
+		{
+			int size = onlineuser.size();
+			for(auto i=0; i < size; i++)
+			{
+				PutStringToWin(online,i+2,2,onlineuser[i]);
+				// SafeWrefresh(online);
+			}	
+		}
+
 		void Welcomde()
 		{
 			std::string welcome = "Welcome to Team ChatSystem";

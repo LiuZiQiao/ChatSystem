@@ -3,6 +3,10 @@
 #include"json/json.h"
 #include"Util.hpp"
 #include<iostream>
+
+#define NORMAL_TYPE 0
+#define LOGIN_TYPE 1
+
 class Message
 {
 private:
@@ -10,13 +14,15 @@ private:
     std::string school;
     std::string text;
     unsigned int id;
+    unsigned int type;
 public:
     Message(){}
-    Message(const std::string &n_,const std::string s_,const std::string t_,const unsigned int id_):
+    Message(const std::string &n_,const std::string s_,const std::string t_,const unsigned int id_,unsigned int type_=NORMAL_TYPE):
         nick_name(n_),
         school(s_),
         text(t_),
-        id(id_)
+        id(id_),
+        type(type_)
     {
 
     }
@@ -27,6 +33,8 @@ public:
         root["school"] = school;
         root["text"] = text;
         root["id"] = id;
+        root["type"] = type;
+
         Util::Serializ(root,sendString);
     }
     void ToRecvValue(std::string &recvString)
@@ -37,6 +45,7 @@ public:
         school = root["school"].asString();
         text = root["text"].asString();
         id = root["id"].asInt();
+        type = root["type"].asInt();
     }
 
     const std::string &Nick_Name()
@@ -52,6 +61,11 @@ public:
 
     const unsigned int &Id(){
         return id;
+    }
+
+    const unsigned int &Type()
+    {
+        return type;
     }
     ~Message(){}
 };
